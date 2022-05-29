@@ -9,7 +9,7 @@
 
 {% block content %}
 
-<div class="row">
+<div class="row p-3 text-dark">
     {% if request.user.is_authenticated %}
     <div class="col-md-4 mx-auto">
         <h3>
@@ -30,14 +30,17 @@
     <div class ="col-md-4 mx-auto">
         <h3><strong>Autenticação</strong></h3>
         <hr>
-        <form action="" method="POST">
+        <div class="rounded bg-info">
+            <form class="p-3" action="" method="POST">
            
-            {% csrf_token %}
-    
-            {{ form|crispy }}
-    
-            <button type="submit" class="btn btn-warning mt-3">Entrar</button>
-        </form>
+                {% csrf_token %}
+        
+                {{ form|crispy }}
+        
+                <button type="submit" class="btn btn-warning mt-3">Entrar</button>
+            </form>
+        </div>
+       
     </div>
     {% endif %}
 </div>
